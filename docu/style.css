@@ -8,5 +8,19 @@ body {
    overflow: hidden;
 }
 
+#start-button {
+    position: fixed;
+    top: 83vh;
+    left: 84vw;
+    padding: 20px 70px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 0px;
+    font-family: 'Roboto Mono';
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
 
 

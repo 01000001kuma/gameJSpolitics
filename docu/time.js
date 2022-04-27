@@ -7,6 +7,7 @@ class Time {
      
       this.currentTime = 60,
       this.intervalId = null
+      this.running = false
     }
   
     start() {
@@ -16,6 +17,7 @@ class Time {
             this.stop();
         }
     },1 * 1000)
+    this.running = true
  };
 
   init(){
@@ -34,6 +36,8 @@ class Time {
   
     stop() {
       clearInterval(this.intervalId)
+      this.intervalId = null
+      this.running = false
     }
   
     reset() {

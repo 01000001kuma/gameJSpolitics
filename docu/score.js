@@ -13,7 +13,7 @@ class Score {
 
     draw() {
         this.ctx.font = "bold 50px 'Roboto Mono'";
-        this.ctx.fillStyle = ""
+        this.ctx.fillStyle = "white"
         this.ctx.fillText(`Score: ${this.score.toString()}`, this.x, this.y);
     }
 

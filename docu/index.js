@@ -9,9 +9,27 @@ const time = new Time(ctx);
 const sound = new Sound(ctx);
 const hand = new Hand(ctx);
 
+const startButton = document.getElementById('start-button');
+startButton.addEventListener (
+    'click',  () => {
+        if(startButton.innerText === 'Start') {
+            startButton.textContent = 'Pause';
+            if (time.currentTime > 0) time.start()
+        } else if(startButton.innerText === 'Pause'){
+            if(time.currentTime>0){
+                startButton.innerText = 'Restart';
+                time.stop();
+            }
+        } else if(startButton.innerText === 'Restart'){
+            startButton.innerText = 'Pause';
+            if (time.currentTime > 0) time.start() 
+        }
+        
+        
+    }
+)
+
+
 
 const game = new Game(ctx, hand, background, score, sound, faces, time);
-
-
-
-game.start()
+window.onload = ()=>game.start()
