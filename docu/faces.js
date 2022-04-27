@@ -1,0 +1,4 @@
+class Faces{
+    move(){}
+    draw(){}
+};
