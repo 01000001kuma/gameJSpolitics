@@ -5,6 +5,7 @@ class Score {
 
         this.x = 1220
         this.y = 100
+
     }
 
     init() {

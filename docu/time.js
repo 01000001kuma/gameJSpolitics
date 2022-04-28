@@ -16,8 +16,8 @@ class Time {
         if (this.currentTime === 0) {
             this.stop();
         }
-    },1 * 1000)
-    this.running = true
+       },1 * 1000)
+       this.running = true
  };
 
   init(){

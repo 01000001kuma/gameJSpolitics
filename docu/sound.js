@@ -1,11 +1,11 @@
-class Sound {
-    constructor(){
-        this.theme = new Audio("../sounds/gameSound.mp3")
-        this.slap = new Audio("../sounds/slap.mp3")
-        
-    }
-    play(sound){
-        sound.play()
-    }
-}
+class Sounds {
+    main= new Audio ("../sounds/gameSound.mp3");
 
+        play(sounds) {
+            this[sounds].play();
+
+        }
+        pause(sounds) {
+            this[sounds].pause();
+        }
+    }

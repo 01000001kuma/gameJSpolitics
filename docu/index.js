@@ -6,7 +6,7 @@ const background = new Background(ctx);
 const faces = new Faces(ctx);
 const score = new Score(ctx);
 const time = new Time(ctx);
-const sound = new Sound(ctx);
+const sound = new Sounds(ctx);
 const hand = new Hand(ctx);
 
 const startButton = document.getElementById('start-button');
@@ -14,7 +14,7 @@ startButton.addEventListener (
     'click',  () => {
         if(startButton.innerText === 'Start') {
             startButton.textContent = 'Pause';
-            if (time.currentTime > 0) time.start()
+            if (time.currentTime > 0) time.start() 
         } else if(startButton.innerText === 'Pause'){
             if(time.currentTime>0){
                 startButton.innerText = 'Restart';
@@ -22,9 +22,12 @@ startButton.addEventListener (
             }
         } else if(startButton.innerText === 'Restart'){
             startButton.innerText = 'Pause';
-            if (time.currentTime > 0) time.start() 
-        }
+            if (time.currentTime > 0) time.start()
+            
+        } 
         
+
+         
         
     }
 )

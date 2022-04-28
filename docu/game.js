@@ -7,14 +7,21 @@ class Game {
         this.sound = sound
         this.faces = faces
         this.time = time
-        this.frameNumber = null
+        this.frameNumber = null 
         this.mouseX = 0
         this.mouseY = 0
+
+            document.addEventListener("click",() =>  this.checkCollisions()) 
+
+
+
     }
 
     start() {
         this.init()
         this.frameNumber = window.requestAnimationFrame(this.play.bind(this))
+        
+        this.sound.play("main")
     }
 
     init() {
@@ -24,19 +31,22 @@ class Game {
         this.time.init();
         this.score.init();
         this.hand.init();
+        this.faces.init();
     }
 
     play() {
         this.move();
         this.draw();
-        if (this.frameNumber !== null) {
-            this.frameNumber = requestAnimationFrame(this.play.bind(this));
-        }
 
+        if (this.frameNumber !== null) { 
+            this.frameNumber = requestAnimationFrame(this.play.bind(this)); 
+        }
     }
 
     move() {
-        this.faces.move(this.mouseY, this.frameNumber);
+        if(this.time.running) {
+            this.faces.move(this.frameNumber)
+        };
     }
 
     draw() {
@@ -49,10 +59,20 @@ class Game {
         // this."""xxxx"".draw();  sound??
     }
 
-    checkCollitions() {
+    checkCollisions() {
+        
+        let collisions = false;
+            
+            this.faces.faces.forEach((face) => {
+                if (this.hand.collidesWith(face)) this.destroyEnemies(face)
+            }) 
 
-
+            return collisions;
     }
 
+    destroyEnemies(face){
+        this.faces.faces.splice(this.faces.faces.indexOf(face),1) 
+        this.score.addPoint()
+    }
 
 }

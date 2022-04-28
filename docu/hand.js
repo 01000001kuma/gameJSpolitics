@@ -1,8 +1,8 @@
 class Hand{
     constructor(ctx){
         this.ctx = ctx;
-        this.width = 80;
-        this.height = 112;
+        this.width = 150;
+        this.height = 120;
         this.x = 100;
         this.y = 100;
 
@@ -14,8 +14,8 @@ class Hand{
 
     init(){
         window.addEventListener("mousemove", ()=> {
-            this.x = event.clientX
-            this.y = event.clientY
+            this.x = event.clientX - 150
+            this.y = event.clientY - 90
         
         } ) //mouse position
     }
@@ -23,7 +23,8 @@ class Hand{
     draw(){
         this.ctx.drawImage(
             this.img,
-            this.x, this.y,
+            this.x , 
+            this.y ,
             this.width,
             this.height,
         );
