@@ -7,6 +7,7 @@
             this.spawnRateEnemy = 100
             this.x = 100
             this.y = 100
+            this.pictures = ["../images/Puig.png", "../images/rajoy.png", "../images/aznar.png", "../images/abascal.png", "../images/perro.png", "../images/albert.png"]
     
         }
     
@@ -14,45 +15,51 @@
             this.faces = [];
             this.vxEnemy = -56;
             this.spawnRateEnemy = 100
-            const newEnemy = {
-                sprite: new Image(),
+            // const newEnemy = {
+            //     sprite: new Image(),
     
-                y: this.ctx.canvas.height/2,
-                x: this.ctx.canvas.width/2,
+            //     y: this.ctx.canvas.height/2,
+            //     x: this.ctx.canvas.width/2,
     
-                width: 80,
-                height: 70,
-                vx: 7 //this.vxEnemy
-            }
-            newEnemy.sprite.src = "../images/perro.png"
-            this.faces.push(newEnemy)
+            //     width: 80,
+            //     height: 70,
+            //     vx: 7 //this.vxEnemy
+            // }
+            // newEnemy.sprite.src = "../images/perro.png"
+            // this.faces.push(newEnemy)
             
         }
+
+        // newEnemy{}
+
+        //randomMove{}
     
         move(frameNumber) {  
             
             //on high axi
-            if(frameNumber%500 === 0){
-                const x =  200 + Math.floor(Math.random() * 600)
-                const y =  200 + Math.floor(Math.random() * 600)
-                const vx = Math.floor(Math.random() * 2)         
-                const vy = Math.floor(Math.random() * 2)
+            if(frameNumber%40 === 0){
+                console.log("newEnemy", this.faces)
+                const x =  338 + Math.floor(Math.random() * (1220-338))
+                const y =  125 + Math.floor(Math.random() * (550-125))
+                const vx = Math.floor(Math.random() * 3)         
+                const vy = Math.floor(Math.random() * 3)
 
                 const newEnemy = {
                     sprite: new Image(),
                     y,
                     x,        
-                    width: 80,
-                    height: 70,
+                    width: 100,
+                    height: 90,
                     vx,
                     vy
                 }
-                newEnemy.sprite.src = "../images/perro.png"
-                this.faces.push()
+                newEnemy.sprite.src = this.pictures[Math.floor(Math.random() * this.pictures.length)]
+                this.faces.push(newEnemy)
             }
     
             this.faces.forEach(enemy => {
                 enemy.x += enemy.vx
+                enemy.y += enemy.vy
             })
         }
     

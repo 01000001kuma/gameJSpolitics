@@ -4,7 +4,8 @@
 }
 
 body {
-   cursor: none;
+    margin: 0   ;
+    cursor: none;
    overflow: hidden;
 }
 

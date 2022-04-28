@@ -8,4 +8,6 @@ class Sounds {
         pause(sounds) {
             this[sounds].pause();
         }
+        
+        slap = new Audio ("../sounds/slap.mp3")
     }

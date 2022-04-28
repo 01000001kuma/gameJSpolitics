@@ -19,6 +19,6 @@ class Score {
     }
 
     addPoint() {
-        this.score+=235
+        this.score+=780
     }
 }

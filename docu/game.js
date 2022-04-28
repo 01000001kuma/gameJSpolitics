@@ -20,8 +20,6 @@ class Game {
     start() {
         this.init()
         this.frameNumber = window.requestAnimationFrame(this.play.bind(this))
-        
-        this.sound.play("main")
     }
 
     init() {
@@ -37,7 +35,7 @@ class Game {
     play() {
         this.move();
         this.draw();
-
+        this.sound.play("main")
         if (this.frameNumber !== null) { 
             this.frameNumber = requestAnimationFrame(this.play.bind(this)); 
         }
@@ -73,6 +71,8 @@ class Game {
     destroyEnemies(face){
         this.faces.faces.splice(this.faces.faces.indexOf(face),1) 
         this.score.addPoint()
+        this.sound.play("slap")
+    
     }
 
 }
