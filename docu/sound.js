@@ -10,4 +10,6 @@ class Sounds {
         }
         
         slap = new Audio ("../sounds/slap.mp3")
+        startScreen = new Audio ("../sounds/Niko.mp3")
+        highScore = new Audio ("../sounds/High.mp3")
     }

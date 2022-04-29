@@ -21,7 +21,7 @@ class Time {
  };
 
   init(){
-    this.currentTime = 60
+    this.currentTime = 5
   }
 
   draw(){
